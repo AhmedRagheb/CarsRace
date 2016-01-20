@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99666F0C-1FDD-4AD4-A13E-E501B7755658}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CarPerformanceComparison.Services</RootNamespace>
+    <AssemblyName>CarPerformanceComparison.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DistanceCalculator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CarFactory.cs" />
+    <Compile Include="CarPerformanceSimulator.cs" />
+    <Compile Include="CarService.cs" />
+    <Compile Include="RaceFactory.cs" />
+    <Compile Include="RaceService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarPerformanceComparison.Contracts\CarPerformanceComparison.Contracts.csproj">
+      <Project>{BFDD602A-51F1-4505-8BF7-003B6A48F742}</Project>
+      <Name>CarPerformanceComparison.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarPerformanceComparison.Data\CarPerformanceComparison.Data.csproj">
+      <Project>{61A94B00-1BBF-4280-BD9A-93BB953814BB}</Project>
+      <Name>CarPerformanceComparison.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarPerformanceComparison.Helpers\CarPerformanceComparison.Helpers.csproj">
+      <Project>{0777EA07-9B4D-4BDB-810D-3660D044FEAB}</Project>
+      <Name>CarPerformanceComparison.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
